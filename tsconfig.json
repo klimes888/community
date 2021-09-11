@@ -11,7 +11,9 @@
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react"
+    "jsxImportSource": "@emotion/react",
+    "types": ["@emotion/react/types/css-prop"]
+
 
   },
   "typeRoots": ["node_modules/@types", "@type"],

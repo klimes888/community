@@ -11,6 +11,6 @@
   },
   "scripts": {
     "prestart": "tsc",
-    "start": "nodemon --exec ts-node dist/app.js" 
+    "server": "nodemon --exec ts-node dist/app.js" 
   }
 }

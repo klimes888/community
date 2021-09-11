@@ -6,7 +6,7 @@
       ],
       "@babel/react",
       "@babel/typescript"
-
     ],
-    "plugins": ["@emotion"]
+    "plugins": ["@emotion/babel-plugin"]
+
   }
