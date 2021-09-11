@@ -14,7 +14,6 @@
     "jsxImportSource": "@emotion/react",
     "types": ["@emotion/react/types/css-prop"]
 
-
   },
   "typeRoots": ["node_modules/@types", "@type"],
   "exclude": [
