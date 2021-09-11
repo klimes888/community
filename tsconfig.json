@@ -8,9 +8,11 @@
     "removeComments": false,
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "keyofStringsOnly": true
+    "keyofStringsOnly": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
+
   },
   "typeRoots": ["node_modules/@types", "@type"],
   "exclude": [
