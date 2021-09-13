@@ -8,6 +8,9 @@ export default function Main() {
         axios({
             method:'get',
             url:'/posts',
+            headers:{
+                "Access-Control-Allow-Origin": "*",
+            }
         }).then((test) => console.log(test))
         .catch( err => console.log(err))
     }

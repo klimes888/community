@@ -39,8 +39,9 @@ module.exports = {
     }),
   ],
   devServer: {
+
     proxy: {
-      "/api": { // /api로 시작하는 경로일 경우, ex) /api/rest/myInfo
+      "/": { 
         target: "http://localhost:3000", // 요청 url 앞에 target을 붙여주기, ex) http://localhost:8080/api/rest/myInfo
         pathRewrite: {"/api": "/"}, // /api에 해당하는 url을 없애기, ex) http://localhost:8080/rest/myInfo
       }
