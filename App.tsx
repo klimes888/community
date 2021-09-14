@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Main from './src/components/Main';
+import Root from './src/router/Root';
 
 interface Props {}
 
 const App = ({  }: Props) => {
-  return <Main/>;
+  return <Root/>;
 };
 
 ReactDOM.render(<App />, document.getElementById('app'));

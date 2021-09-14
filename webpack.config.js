@@ -39,7 +39,6 @@ module.exports = {
     }),
   ],
   devServer: {
-
     proxy: {
       "/": { 
         target: "http://localhost:3000", // 요청 url 앞에 target을 붙여주기, ex) http://localhost:8080/api/rest/myInfo

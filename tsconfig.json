@@ -12,19 +12,21 @@
     "keyofStringsOnly": true,
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
-    "types": ["@emotion/react/types/css-prop"]
+    "types": ["@emotion/react/types/css-prop"],
+    "maxNodeModuleJsDepth": 0,
+    "checkJs": false,
+    "outDir": "./dist/",
+    "baseUrl": "@"
 
   },
   "typeRoots": ["node_modules/@types", "@type"],
   "exclude": [
-    "node_modules",
-    "build",
+    "./build",
     "scripts",
-    "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts",
-    "./node_modules/**/*"
+    "./node_modules/**/*",
+    "./dist/**/*"
   ],
-  "include": ["./**/*", "@type"]
+  "include": ["./**/*", "@type", "src"]
   }

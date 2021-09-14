@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {jsx, css} from '@emotion/react';
 import axios from 'axios';
 
 export default function Main() {
-
+    const [data, setData] = useState(null);
+    
     const fetch = () => {
         axios({
             method:'get',
@@ -11,7 +12,7 @@ export default function Main() {
             headers:{
                 "Access-Control-Allow-Origin": "*",
             }
-        }).then((test) => console.log(test))
+        }).then((test) => setData(test))
         .catch( err => console.log(err))
     }
 
@@ -19,10 +20,9 @@ export default function Main() {
         fetch();
     }, [])
 
-
     return (
         <div css={mainStyle}>
-            testdsd
+            test
         </div>
     )
 }
