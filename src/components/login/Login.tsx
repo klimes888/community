@@ -13,4 +13,5 @@ const layout = css `
     flex:1;
     justify-content: center;
     align-items: center;
+    background:#999;
 `;
