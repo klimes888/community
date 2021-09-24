@@ -30,9 +30,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimrçaf dist",
     "build": "webpack --progress --mode production",
-    "dev": "concurrently --kill-others-on-fail \"yarn start\" \"cd server && yarn server\""
-  },
-  "proxy": "http://localhost:3000/"
+    "dev": "concurrently --kill-others-on-fail \"yarn start\" \"cd server && yarn start\""
+  }
 }

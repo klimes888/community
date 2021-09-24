@@ -7,17 +7,17 @@
   app.use(express.json())
 
   const corsOptions = {
-    origin: 'http://localhost:8080', // 허락하고자 하는 요청 주소
-    credentials: true, // true로 하면 설정한 내용을 response 헤더에 추가 해줍니다.
+    origin: 'http://localhost:8080', // proxy
+    credentials: true,
 };
 
   app.use(cors(corsOptions))
   // get
-  app.get('/', (req: Request, res: Response) => {
-    res.send('hello express');
+  app.get('/api', (req: Request, res: Response) => {
+    res.send('api 정상 작동');
   });
 
-  app.get('/posts', (req: Request, res: Response) => {
+  app.get('/api/posts', (req: Request, res: Response) => {
     res.json([
       { id: 1, content: 'hello' },
       { id: 2, content: 'hello2' },
@@ -27,6 +27,6 @@
 
   // app.use('/post', postRouter);
 
-  app.listen(3000, '0,0,0,0,', () => {
+  app.listen(3000, () => {
     console.log('실행중');
   });

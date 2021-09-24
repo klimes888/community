@@ -12,8 +12,8 @@
     "cors": "2.8.5"
   },
   "scripts": {
-    "prestart": "tsc",
-    "server": "nodemon --exec ts-node dist/app.js"
+    "start": "nodemon --exec ts-node dist/app.js",
+    "prestart": "tsc"
   },
-  "proxy": "http://localhost:3000/"
+  "proxy": "http://localhost:3000/api"
 }
