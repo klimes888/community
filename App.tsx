@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Root from './src/router/Root';
+import Root from '@/router/Root';
 
 interface Props {}
 

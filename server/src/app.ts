@@ -25,6 +25,11 @@
     ]);
   });
 
+  app.get('/api/signup', (req: Request, res: Response) => {
+    console.log(req)
+    res.status(200);
+  });
+
   // app.use('/post', postRouter);
 
   app.listen(3000, () => {

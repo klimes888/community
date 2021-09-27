@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-export default function Main() {
-  return (
-    <div>
-        aa
-    </div>
-  )
+// components
+import Main from '@/components/main/Main';
+
+export default function MainPage() {
+  return (<Main />)
 }
