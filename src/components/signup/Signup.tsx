@@ -1,13 +1,28 @@
 import { css } from '@emotion/react';
-import React from 'react'
+import { axiosFetch } from '@/hooks/axiosFetch';
+import { useState } from 'react'
 
 export default function Signup() {
+
+    const [signupData, setSignupData] = useState({email:'', password:'', repassword:''})
+
+    const inputArr = [
+        {index:0, type:'email', placeHolder:'이메일', style:inputStyle, name:'email'},
+        {index:1, type:'password', placeHolder:'비밀번호', style:inputStyle, name:'password'},
+        {index:2, type:'password', placeHolder:'비밀번호 확인', style:inputStyle, name:'repassword'}
+    ]
+
+    const signupHandler = () => {
+        const test = axiosFetch('signup', 'post', 'signup', signupData, null, 0)
+        console.log(test);
+    }
+
     return (
         <article css={Layout}>
-            <input type="text" placeholder="이메일" css={inputStyle} />
-            <input type="password" placeholder="비밀번호" css={inputStyle} />
-            <input type="password" placeholder="비밀번호 확인" css={inputStyle} />
-            <button>회원가입!</button>
+            { inputArr?.map( ({index, type, placeHolder, style, name }) => 
+            <input key={index} type={type} placeholder={placeHolder} css={style} onChange={e => setSignupData({...signupData, [name]:e.target.value})} />
+            )}
+            <button onClick={signupHandler}>회원가입!</button>
         </article>
     )
 }
