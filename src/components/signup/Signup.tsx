@@ -1,9 +1,10 @@
 import { css } from '@emotion/react';
-import { axiosFetch } from '@/hooks/axiosFetch';
+import axiosFetch from '@/hooks/axiosFetch';
 import { useState } from 'react'
 
 export default function Signup() {
-
+    // fetch
+    const _fetch = axiosFetch()
     const [signupData, setSignupData] = useState({email:'', password:'', repassword:''})
 
     const inputArr = [
@@ -13,8 +14,7 @@ export default function Signup() {
     ]
 
     const signupHandler = () => {
-        const test = axiosFetch('signup', 'post', 'signup', signupData, null, 0)
-        console.log(test);
+        _fetch('post', 'signup', signupData, null);
     }
 
     return (

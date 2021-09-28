@@ -35,5 +35,5 @@
     "build": "webpack --progress --mode production",
     "dev": "concurrently --kill-others-on-fail \"yarn start\" \"cd server && yarn start\""
   },
-  "proxy": "http://localhost:3000/api"
+  "proxy": "http://localhost:3000"
 }

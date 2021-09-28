@@ -1,10 +1,12 @@
   
   import express, {Application, Request, Response} from 'express';
+
   import cors from 'cors'
-  // import postRouter from './routes/post';
+  import signupRouter from './signup/routes/signup_router';
 
   const app: Application = express();
   app.use(express.json())
+  app.use(express.urlencoded( {extended : false } )); 
 
   const corsOptions = {
     origin: 'http://localhost:8080', // proxy
@@ -13,7 +15,7 @@
 
   app.use(cors(corsOptions))
   // get
-  app.get('/api', (req: Request, res: Response) => {
+  app.get('/api/', (req: Request, res: Response) => {
     res.send('api 정상 작동');
   });
 
@@ -25,10 +27,7 @@
     ]);
   });
 
-  app.get('/api/signup', (req: Request, res: Response) => {
-    console.log(req)
-    res.status(200);
-  });
+  app.use('/api/signup', signupRouter);
 
   // app.use('/post', postRouter);
 

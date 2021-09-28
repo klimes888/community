@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios, { AxiosResponse } from "axios"
-import { useMutation, useQuery } from "react-query";
 
 type props = {
     method:'get' | 'post' | 'delete';
@@ -10,21 +9,24 @@ type props = {
 }
 
     // const [fetchData, setFetchData] = useState<AxiosResponse | null>(null);
-    export const axiosFetch = (type, method, url, data, params, num) => {
-
+    const axiosFetch = () => {
         
-    
-        const _fetch = () => {
-         const test = useMutation([type, num], () => axios({
+        const _fetch = (method, url, data, params) => {
+            console.log(url)
+        return axios({
                 method,
-                url:`localhost:3000/api/${url}`,
+                url:`http://localhost:3000/api/${url}`,
+                headers:{
+                "Access-Control-Allow-Origin": "*",
+                },
                 data
             }).then( res => {
-                console.log(res);
+                console.log('res');
                 return res
-            }).catch( err => console.log(err)))
+            }).catch( err => console.log(err))
         };
-        
         return _fetch
     }
+
+    export default axiosFetch;
     
