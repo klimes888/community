@@ -1,26 +1,27 @@
 import express, {Application, Request, Response} from 'express';
-// import mysql from 'mysql';
-const mysql = require('mysql');
+let mysql = require('mysql2');
 
 const db = mysql.createConnection({
     host:'localhost',
     user:'taehee',
     password:'1234',
-    port:3360,
-    database:'community'
+    port:3306,
+    database:'cm'
 });
 
-db.connect();
+db.connect()      
 
 const router = express.Router();
 
 router.post('/', function(req, res, next) {
-    const {email, password, repassword} = req.body;
-    const param = [email, password]
+    const {email, password, repassword, name} = req.body;
+    const param = [email, password, name]
     if(email && password){
         if(password !== repassword) return;
-        db.query(`INSERT INTO users('email', 'password') VALUES(?, ?), ${param}`, (err:Error, row:any) => {
-            if(err) console.log(err)
+        db.query(`INSERT INTO users('email', 'password', 'name') VALUES(?, ?, ?), ${param}`, (err:Error, row:any) => {
+            if(err){ console.log(err); return;};
+            console.log(row);
+            res.send('api 정상 작동');
         })
     }
     // res.send('api 정상 작동');
