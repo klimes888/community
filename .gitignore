@@ -1,6 +1,6 @@
 /node_modules
-/.pnp
-.pnp.js
-/build
+.node-version
+dist
+dbdata
 .DS_Store
-.env
+nginx
