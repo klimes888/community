@@ -13,13 +13,13 @@ services:
   mysql:
     image: "mysql:latest"
     ports:
-      - "3306:3306"
+      - "1111:3306"
     volumes:
       - ../../mysql_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: "1234"
-      MYSQL_DATABASE: "cm"
-      MYSQL_USER: "taehee"
-      MYSQL_PASSWORD: "1234"
+      MYSQL_ROOT_PASSWORD: "test1234"
+      MYSQL_DATABASE: "community"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "test1234"
     expose:
-      - "3306"
+      - "1111"
