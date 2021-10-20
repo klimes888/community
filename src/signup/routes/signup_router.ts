@@ -2,11 +2,11 @@ import express, {Application, Request, Response} from 'express';
 let mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const db = mysql.createConnection({
-    host:'172.17.0.1',
-    user:'root',
+    host:'mysql',
+    user:'taehee',
     password:'1234',
     port:3306,
-    database:'mysql'
+    database:'cm'
 });
 
 db.connect()
