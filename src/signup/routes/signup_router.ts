@@ -1,12 +1,17 @@
 import express, {Application, Request, Response} from 'express';
+const path = require("path");
+require('dotenv').config({ path: path.join(__dirname, '../../../.env.development') });
+console.log(process.env.MYSQL_DB_HOST);
+
 let mysql = require('mysql2');
 const bcrypt = require('bcrypt');
+
 const db = mysql.createConnection({
-    host:'mysql',
-    user:'taehee',
-    password:'1234',
-    port:3306,
-    database:'cm'
+    host:process.env.MYSQL_DB_HOST,
+    user:process.env.MYSQL_DB_USER_NAME,
+    password:process.env.MYSQL_DB_PASSWORD,
+    port:process.env.MYSQL_DB_PORT,
+    database:'community'
 });
 
 db.connect()
